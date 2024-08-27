@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CallBack and Pyramid of Doom</title>
+</head>
+
+<body>
+    <h2>In this file i will be learning about callbacks and callback hell or pyramid of doom"</h2>
+
+</body>
+<script>
+
+    // Lecture - 52 (Introduction to Callback)
+
+    // Synchronous action
+
+    // let a = prompt("What is your name ?")
+    // console.log(a)  // It will not executed unless value of 'a' is prompted i.e synchronous nature 
+
+    // Asynchronous action
+
+    // console.log("I am before setTimeout") // it will be executed befoe setTimeout
+    // setTimeout(()=>{
+    //     console.log("My name is Avinash Singh")
+    // }, 4000)
+    // console.log("I am after setTimeout") // Also be executed before setTimeout, setTimeout is scheduled after 4s i.e asynchronous nature
+
+    // Callback function
+
+    // let loadScript = (src, callback) =>{
+    //     let script = document.createElement("script")
+    //     script.src = src
+    //     // script.onload = () => callback()  // Here hello() is called as callback
+    //     script.onload = () => callback(src) // Here printSrc() is called as callback
+    //     // script.onload = () => callback(3, 7) 
+    //     document.head.append(script)
+    // }
+
+    // loadScript("Chap_1.0_Lec_2_3_Variables_let_var_const.js", hello)
+
+    // loadScript("Chap_1.0_Lec_2_3_Variables_let_var_const.js", (a, b)=>{
+    //     alert(`Aapka Wala appended script load ho gaya ji aur value hai ${(a + b)}`)
+    // })
+
+    // loadScript("Chap_1.0_Lec_2_3_Variables_let_var_const.js", printSrc)
+
+    // function hello(){
+    //     alert("Aapka Wala appended script load ho gaya ji")
+    // }
+
+    // function printSrc(src){
+    //     alert(`Aapka Wala appended script load ho gaya ji /n Src = "${src}"`)
+    // }
+
+    // Error Handling
+
+    // function loadScript(url, callBack){
+    //     let script = document.createElement("script")
+    //     script.src = url
+    //     document.head.append(script)
+    //     script.onerror = ()=> {
+    //         console.log("Error loading script with SRC : ", url)
+    //         callBack(new Error("Error has happened"), null)
+    //     }
+    //     script.onload = ()=>{
+    //         callBack(null, url)
+    //     }
+    // }
+
+    // loadScript("Chap_1.0_Lec_2_3_Variables_le_var_const.js", (error, url)=>{
+    //     if(error){
+    //         console.log(error)
+    //         return
+    //     }
+    //     alert(`Your script has been loaded src = ${url}`)
+    // })
+
+    // Lecture - 53 (CallBack Hell and Pyramid of Doom)
+
+    // If we pass the whole function as a callback then it can be used in not good way. 
+    // Let's say you pass a callback that if error happens run this callback and in callback you have written the code to call the coder but what happens is that by some mistake error becomes true without code being produce an error so coder will be called without needing. Callback is not a good option to handle errors.
+
+    // CallBack Hell or Pyramid of Doom
+
+    // function loadScript(url, callBack) {
+    //     let script = document.createElement("script")
+    //     script.setAttribute("src", url)
+    //     document.body.append(script)
+    //     script.onerror = () => {
+    //         callBack(new Error("Error Happened:"), null)
+    //     }
+    //     script.onload = () => {
+    //         callBack(null, url)
+    //     }
+    // }
+
+    // loadScript("Chap_1.0_Lec_2_3_Variables_let_var_const.js", (error, url) => {
+    //     if (error) {
+    //         console.log(error)
+    //         return
+    //     }
+    //     loadScript("Chap_1.0_Lec_2_3_Variables_let_var_const.js", (error, url) => {
+    //         if (error) {
+    //             console.log(error)
+    //             return
+    //         }
+    //         loadScript("Chap_1.0_Lec_2_3_Variables_let_var_const.js", (error, url) => {
+    //             if (error) {
+    //                 console.log(error)
+    //                 return
+    //             }
+    //             loadScript("Chap_1.0_Lec_2_3_Variables_let_var_const.js", (error, url) => {
+    //                 if (error) {
+    //                     console.log(error)
+    //                     return
+    //                 }
+    //                 console.log("All scripts have been loaded")
+    //             })
+    //         })
+    //     })
+    // })
+
+
+
+
+</script>
+
+</html>

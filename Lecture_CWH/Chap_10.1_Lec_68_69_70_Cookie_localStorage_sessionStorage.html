@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Local Storage and Session Storage</title>
+</head>
+
+<body>
+    <h2>In this lecture i will be studying about Cookie, Local Storage and Session Storage</h2>
+</body>
+
+<script>
+    // ----------- Lecture - 68 (Cookie) ------------ 
+
+    // console.log(document.cookie)
+    // document.cookie = "name=AvinashKumarSingh"
+    // document.cookie = "name2=MuskanGupta"
+    // let key = prompt("Enter Your Key")
+    // let value = prompt("Enter your value")
+    // document.cookie = `${encodeURIComponent(key)}=${encodeURIComponent(value)}`
+    // console.log(document.cookie)
+
+    // if we use ;, = or special symobl in key or values then it will not set our cookes we need to use encodeURIComponent() to encode that and we can also decode that key or value using decodeURIComponent(string of encoded)
+
+    // document.cookie = "1=2;3=4" // 3=4 will be ignored as it is just option we can set options like 
+    // document.cookie = "user=John; path=/a/b; expires=Thu, 01 Jan 1970 00:00:00"
+
+    // expires option is used to delete a cookie (just giva a past date)
+    // path option is ued to set this cookie to all the domain name of path
+
+
+    // ----------- Lecture - 69 (Local Storage) ------------ 
+
+    // let key = prompt("Enter key you want to set : ")
+    // let value = prompt("Enter value you want to set: ")
+    // localStorage.setItem(key, value)
+
+    // if(key == "Girl" && value == "puja"){
+    //     localStorage.removeItem(key)
+    // }
+
+    // if(key == 0){
+    //     localStorage.clear()
+    // }
+
+    // console.log(localStorage.length)
+    // console.log(localStorage.key(1))
+
+    // localStorage.one = "i am one"  // we can also set localStorage as object
+    // delete localStorage.one
+
+    // let obj = {
+    //     fruit: "guava",
+    //     oil: "mustard"
+    // }
+    // localStorage.setItem("object", JSON.stringify(obj)) // we can set object also 
+
+    // console.log(localStorage.getItem("object"))  // uesd to get localStorage
+
+    // ----------- Lecture - 70 (Session Storage) ------------ 
+
+    // it only exist within current browser tab. Another tab with same page will have a different Storage
+    // it has same properties or methods as localStorage
+
+    // sessionStorage.setItem("name", "avinash kumar singh")
+    // console.log(sessionStorage.getItem("name"))
+
+    // session Event
+
+    // window.onstorage = (e) => {
+    //     alert("You have changed your storage")
+    //     console.log(e)
+    // }
+</script>
+
+
+
+</html>

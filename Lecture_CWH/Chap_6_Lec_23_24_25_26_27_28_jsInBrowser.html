@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript in the Browser</title>
+</head>
+<body>
+    <Script>
+        console.log("In this file i will be learning about JavaScript in the browser")
+
+        // Lecture - 23 is all about Developer tools and how to add script files
+
+        // ------------- Lecture - 24 starts from here -----------
+        
+        // Advantages of using a seperate script file using src attribute and attach it with html
+        // 1. Seperations of concerns :- We can make different script files for different purpose
+        // 2. Browser Caching :- Browser download and keep the js file, so don't need to download for further use
+        
+        // ------------- Lecture - 25 starts from here -----------
+
+        // console.log(console)  // list the console object
+
+        // console.error("This is an eror")  // use to throw error
+
+        // console.assert(5 > 10)  // use to assert statement
+
+        // console.clear()  // use to clear console
+
+        // const obj = {"Babu":"one", 2 : "Two", 3 : "Three"}
+        // console.table(obj)  // make object in tabular form
+
+        // console.warn("Don't try to mess with me")  // use to throw warning
+
+        // console.info("Hey this is an important information") // same like console.log()
+
+        console.time("forLoop_total_time")
+        for(let a = 1; a <= 5; a++){
+            console.log(a)
+        }
+        console.timeEnd("forLoop_total_time")
+
+        console.time("whileLoop_total_time")
+        let a = 1;
+        while(a <= 5){
+            console.log(a)
+            a++;
+        }
+        console.timeEnd("whileLoop_total_time")
+
+        // Lecture - 26 is all about solving Ex - 1 which i already solved in "PS-5-Ex-1-Lec-21_22"
+
+        // ---------- Lecture - 27 starts from here --------
+
+        // alert("Hello, Your website's working")
+
+        // let a = prompt("What's your name? ", "Avinash Kumar Singh")
+        // document.write(a)
+
+        // let boool = confirm("Do You want to marry me? ")
+        // document.write(boool + " wants to marry")
+
+        // --------- Lecture - 28 starts from here
+
+        // window.console.log(window)
+        // console.log(document)
+        // console.log(document.body)
+        document.body.style.backgroundColor = "Yellow"
+
+
+
+    </Script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        user-select: none;
+    }
+
+    body {
+        background-color: black;
+        height: 100vh;
+        width: 100vw;
+    }
+
+    h2 {
+        text-align: center;
+        font-size: 2rem;
+        font-weight: bold;
+        text-shadow: 2px 2px 3px black;
+        color: white;
+    }
+
+    .box {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: white;
+    }
+
+    .box1 {
+        background-color: #cea011;
+        border: 1px solid blue;
+    }
+
+    .box2 {
+        background-color: red;
+        border: 1px solid yellow;
+    }
+
+    .box3 {
+        background-color: blue;
+        border: 1px solid yellow;
+    }
+
+    .clock {
+        width: 40%;
+        height: 35%;
+        background-color: rgb(44, 43, 43);
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        column-gap: 13px;
+        align-items: center;
+        position: absolute;
+        top: 32.5%;
+        left: 30%;
+        color: white;
+        font-size: 2.2rem;
+        font-weight: bold;
+    }
+
+    .hour_box,
+    .minute_box,
+    .second_box {
+        font-size: 12px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: white;
+    }
+</style>
+
+<body>
+    <!-- Lecture - 50 is all about Ex - 3 solution which i have already solved in Lecture - 40 -->
+
+    <!-- Create a digital second clock using setInterval and Date object in js. The Date object can be used to get date, time , hour, minutes, which can be updated using setInterval and also try to keep UI looking good -->
+
+    <h2>My Clock</h2>
+    <div class="clock">
+        <div class="hour_box">
+            <div id="hour" class="box box1">00</div>
+            Hour
+        </div>
+        :
+        <div class="minute_box">
+            <div id="minute" class="box box2">00</div>
+            Minute
+        </div>
+        :
+        <div class="second_box">
+            <div id="second" class="box box3">00</div>
+            Second
+        </div>
+    </div>
+    <script>
+        let h = document.getElementById("hour")
+        let m = document.getElementById("minute")
+        let s = document.getElementById("second")
+
+        let date = new Date()
+        h.innerHTML = date.getHours()
+        m.innerHTML = date.getMinutes()
+        s.innerHTML = date.getSeconds()
+
+        setInterval(() => {
+            let date = new Date()
+            h.innerHTML = date.getHours()
+            m.innerHTML = date.getMinutes()
+            s.innerHTML = date.getSeconds()
+        }, 1000)
+
+
+    </script>
+</body>
+
+</html>

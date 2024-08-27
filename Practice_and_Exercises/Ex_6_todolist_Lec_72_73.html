@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        width: 100vw;
+        min-height: 100vh;
+        overflow-x: hidden;
+        background: linear-gradient(rgb(6, 6, 71), rgb(10, 10, 159), rgb(10, 10, 232));
+        display: flex;
+        justify-content: center;
+    }
+
+    .box {
+        width: 45%;
+        background-color: white;
+        border-radius: 19px;
+        margin: 12vh 0;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+    }
+
+    .box_header {
+        display: flex;
+        column-gap: 0.5rem;
+        align-items: center;
+    }
+
+    .box_header>h2 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .box_header img {
+        width: 1.7rem;
+        height: 1.7rem;
+    }
+
+    form {
+        position: relative;
+        width: 100%;
+    }
+
+    input[type="text"] {
+        width: calc(100% - 5rem);
+        font-weight: bold;
+        font-size: 0.9rem;
+        outline: none;
+        border: none;
+        background-color: lightgrey;
+        padding: 12px 3.2rem 12px 15px;
+        border-radius: 20px 0 0 20px;
+    }
+
+    input[type="button"] {
+        font-weight: bold;
+        font-size: 0.9rem;
+        outline: none;
+        border: none;
+        background-color: #d69827;
+        color: white;
+        padding: 12px 2rem;
+        border-radius: 20px;
+        cursor: pointer;
+        position: absolute;
+        right: 2rem;
+        width: 6rem;
+    }
+
+    .all_list {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .list {
+        display: flex;
+        align-items: center;
+        margin-top: 1rem;
+        margin-left: 0.5rem;
+        gap: 1rem;
+    }
+
+    input[type="checkbox"] {
+        cursor: pointer;
+        appearance: none;
+        border: 1px solid black;
+        border-radius: 3px;
+        width: 18px;
+        height: 18px;
+        padding-left: 4px;
+        background-color: transparent;
+    }
+
+    input[type="checkbox"]:checked {
+        background-color: #d69827;
+        color: white;
+        font-weight: bold;
+    }
+
+    input[type='checkbox']:checked:after {
+        content: '\2713';
+        color: white;
+    }
+
+    input[type="checkbox"]+label {
+        font-size: 0.9rem;
+        font-weight: bold;
+        width: 75%;
+        cursor: pointer;
+    }
+
+    input[type="checkbox"]:checked+label {
+        text-decoration: line-through;
+        font-weight: 500;
+    }
+
+    .list>img {
+        width: 0.8rem;
+        height: 0, 8rem;
+        cursor: pointer;
+    }
+
+    @media(max-width:950px) {
+        .box {
+            width: 80%;
+        }
+    }
+
+    @media(max-width:550px) {
+        .box {
+            width: 95%;
+            padding: 10px;
+        }
+
+        input[type="button"] {
+            right: 0rem;
+        }
+
+        input[type="text"] {
+            padding-right: 1.5rem;
+        }
+    }
+</style>
+
+<body>
+
+    <!-- Lectue - 72 is all about Exercise - 5 which i already solved in Lectue - 65 -->
+    <div class="box">
+        <div class="box_header">
+            <h2>To-Do List</h2>
+            <img src="Img/list.png">
+        </div>
+        <form>
+            <input type="text" name="text" id="text" autofocus autocomplete="off" placeholder="Add your task">
+            <input type="button" value="Add" id="add_btn">
+        </form>
+        <div class="all_list"></div>
+    </div>
+</body>
+<script>
+
+    let ticker = (index) => {
+        let storageArray = JSON.parse(localStorage.getItem("todo_list"))
+        storageArray[index][1] = (storageArray[index][1]) ? false : true;
+        localStorage.setItem("todo_list", JSON.stringify(storageArray))
+    }
+
+    let inputer = () => {
+        document.querySelector(".all_list").innerHTML = ''
+        let storageArray = JSON.parse(localStorage.getItem("todo_list"))
+        let data = ''
+        storageArray.forEach((value, index) => {
+            let div = document.createElement("div")
+            div.setAttribute("class", "list")
+            data = `
+                <input type="checkbox" id="checkbox_${index}" onclick="ticker(${index})">
+                <label for="checkbox_${index}">${value[0]}</label>
+                <img id="cross_${index}" src="Img/cross.png" onclick="deleter(this.id)">
+                `
+            div.innerHTML = data
+            document.querySelector(".all_list").append(div)
+            if (value[1] == true) {
+                let checkbox = document.getElementsByClassName(`list`)[index].firstElementChild
+                checkbox.checked = true
+            }
+        })
+    }
+
+    let checker = () => {
+        let input_value = document.getElementById("text").value.trim()
+        if (input_value == '') {
+            return false
+        }
+        return true
+    }
+
+    let storageSetter = () => {
+        let storageArray = JSON.parse(localStorage.getItem("todo_list"))
+        let input_value = document.getElementById("text").value.trim()
+        let data = [input_value, false]
+        storageArray.push(data)
+        localStorage.setItem("todo_list", JSON.stringify(storageArray))
+    }
+
+    let deleter = (id) => {
+        let index = (Number)(id.charAt(6))
+        let storageArray = JSON.parse(localStorage.getItem("todo_list"))
+        storageArray.splice(index, 1)
+        localStorage.setItem("todo_list", JSON.stringify(storageArray))
+        inputer()
+    }
+
+    if (localStorage.getItem("todo_list") == null) {
+        localStorage.setItem("todo_list", '[]')
+    }
+    else {
+        inputer()
+    }
+
+
+    document.getElementById("add_btn").onclick = (e) => {
+        e.preventDefault()
+        if (checker()) {
+            storageSetter()
+            inputer()
+        }
+        else {
+            alert("Fill the data carefully")
+        }
+        document.getElementById("text").value = ''
+    }
+
+
+
+
+
+
+
+</script>
+
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises .then() and .catch()</title>
+</head>
+
+<body>
+    <h2>In this lecture i will be learning about promises and .then() and .catch() and Promise chaining</h2>
+</body>
+<script>
+    // Lecture - 54 (Introduction to Promises)
+
+    // let promise = new Promise(function(resolve, reject){
+    //     console.log("I am a promise")
+    //     resolve(56)
+    // })
+
+    // console.log("Hello world 1")
+    // setTimeout(()=> {
+    //     console.log("I am a setTimeout() and hello 2")
+    // }, 4000)
+    // console.log("I am a hello out of the setTimeout() and hello 3")
+
+    // console.log(promise)
+
+    // Lecture - 55 (Promise .then() and .catch())
+
+    // let p1 = new Promise((resolve, reject) => {
+    //     console.log("Promise is pending")
+    //     setTimeout(() => {
+    //         console.log("I am a promise and i am resolved")
+    //         resolve(true)
+    //     }, 4000)
+    // })
+
+    // let p2 = new Promise((resolve, reject) => {
+    //     console.log("Promise is pending")
+    //     setTimeout(() => {
+    //         // console.log("I am a promise and i am rejected")
+    //         reject(new Error("I am an error"))
+    //     }, 4000)
+    // })
+
+    // to get the value 
+
+    // p1.then((value) => {
+    //     console.log(value)
+    // })
+
+    // to catch the error
+
+    // p2.catch((error) => {
+    //     console.log("Some error occured in p2")
+    // })
+
+    // we can catch error with .then() also because it takes two fucntions
+
+    // p2.then((value) => {
+    //     console.log(value)
+    // }, (error) => {
+    //     console.log(error)
+    // })
+
+    // Lecture - 56 (Promise Chaining)
+
+    let p1 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            console.log("I am promsie 1 and resolved after 2s")
+            resolve(56)
+        }, 2000)
+    })
+
+    p1.then((value) => {
+        console.log(value)
+        return new Promise((resolve, reject) => {
+            setTimeout(()=>{resolve("Promise 2")}, 5000)
+        })
+
+    })
+    .then((value) => {
+        console.log("We are done with value = ", value)
+        return 256
+    })
+    .then((value)=>{
+        setTimeout(()=>{console.log("We are done in setTimeout")}, 4000)
+        console.log("Now we are pakka done")
+    })
+
+    // Quick Quiz: Write loadScript() with the help of promise
+
+    // const loadScript = (url) => {
+    //     return new Promise((resolve, reject) => {
+    //         let script = document.createElement("script")
+    //         script.src = url
+    //         document.head.append(script)
+
+    //         script.onload = () => {
+    //             resolve(1)
+    //         }
+    //         script.onerror = () => {
+    //             reject(new Error("Some error occrued while loading this script"))
+    //         }
+    //     }
+    //     )
+    // }
+
+    // let load = loadScript("Chap_5.1_Lec_9_20_ArrayLoops_Map.js")
+
+    // load
+    // .then((value) => {
+    //     console.log("Script 1 has been loaded with value = ", value)
+
+    //     return loadScript("Chap_5.0_Lec_16_17_18_Array_Methods.js")
+        
+    // }, (error) => {
+    //     console.log(error)
+    //     return loadScript("Chap_5.0_Lec_16_17_18_Array_Methods.js")
+
+    // })
+    // .then((value)=> {
+    //     console.log("Script 2 has been loaded with value = ", value)
+
+    // }, (error)=>{
+    //     console.log("Some error occured while loading script 2")
+    // })
+
+</script>
+
+</html>

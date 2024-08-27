@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setInterval setTimeout & Browser Events</title>
+</head>
+<body>
+    <!--  Lecture - 46 (setTimeout, setInterval & clearTimeout) -->
+
+    Hello, I have been created for this lecture 46
+
+    <!-- Lecture - 47 (Browser Events) -->
+    <div class="container">
+
+        <!-- <button onclick="alert('Why did you click me?');let a = 3; console.log(a)">Click Me Please</button> -->
+
+        <!-- <button id="btn1" onclick="console.log('Yessss!')" onmouseenter="console.log(`Mouse has entered in this button`)">Button Hai Hum</button> -->
+
+    </div>
+
+    <!-- Lecture - 48 (Handling Browser Events) -->
+
+    <button>Click me for God's sake</button>
+
+
+
+</body>
+<script>
+    // Lecture - 46 (setTimeout, setInterval & clearTimeout)
+
+    // const sum = (a, b, c) =>{
+    //     console.log("Yes i am inside function sum")
+    //     alert(a + b + c)
+    // }
+
+    // setTimeout(sum, 4000, 5, 4, 1) 
+
+    //setTimeout 1st parameter will be a function, 2nd parameter will be time in millisecond and all remaining will be the parameters of function
+
+    // let a = setTimeout(function(){
+    //     alert("I am inside a setTimeout")
+    //     document.write("setTimeout")
+    // }, 3000)
+    // console.log(a)  // setTimeout returns a timer id
+    
+    // let b = window.prompt("Do you want to run setTimeout", "y")
+    // if(b == "n"){
+    //     clearTimeout(a) // it will stop running setTimeout
+    // }
+
+
+    // const sum = (a, b, c) =>{
+    //     console.log("Yes i am inside function sum")
+    //     alert(a + b + c)
+    // }
+
+    // setInterval(sum, 4000, 5, 4, 1) 
+
+    // setInterval 1st parameter will be a function, 2nd parameter will be time in millisecond and all remaining will be the parameters of function
+
+    // let b = setInterval(function(){
+    //     alert("I am setInterval")
+    // }, 4000)
+
+    // clearInterval(b) // used to clear setInterval
+    // console.log(b)  // setInterval returns a timer id
+
+    // Lecture - 47 (Browser Events)
+
+    // let btn1 = document.getElementById("btn1")
+    // btn1.onclick = () => {
+    //     alert("You have clicked me")
+    // }
+
+    // If a handler is present in the html and you again  handle the event in js then the handler will be override
+    
+
+    // Lecture - 48 (Handling Browser Events)
+
+    let btn = document.getElementsByTagName("button")[0]
+    btn.addEventListener("click",()=>{
+        alert("ThankYou! for clicking me")
+    })
+
+    let x = (event)=>{
+        console.log(event)  // event object
+        console.log(event.target)  // event object
+        console.log(event.type, event.clientX, event.clientY)  // event object
+        console.log("Mere area me koi bhi enterance mt krna")
+    }
+
+    btn.addEventListener("mouseenter", x)
+
+    // btn.addEventListener("mouseout", ()=>{
+    //     console.log("Where are you going?")
+    // })
+
+
+    // let input = window.prompt("Enter 1 to stop eventListener 'mouseenter' ", "1")
+    // if(input == 1){
+    //     btn.removeEventListener("mouseenter", x)
+    // }
+
+    // addEventListener("DOMContentLoaded", ()=>{
+    //     alert("Ho gaya dom load")
+    // })
+
+    // addEventListener("keydown", ()=>{
+    //     console.log("down key ko chod do bhai!")
+    // })
+
+
+
+</script>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IIFE Destructuring and Scope </title>
+</head>
+
+<body>
+    <h2>In this lecture i will be learning about IIFE (Immediately Invoked Function Expression), Destructuring and Scope
+    </h2>
+</body>
+<script>
+    // -------------- Lecture - 86 (IIFE) ------------ 
+
+    // let promiseReturner = () => {
+    //     return new Promise((resolve, reject) => {
+    //         setTimeout(() => {
+    //             resolve("Value = 123")
+    //         }, 3000)
+    //     })
+    // }
+
+    // (
+    //     async () => {
+    //         let p1 = await promiseReturner()
+    //         console.log(p1)
+    //         let p2 = await promiseReturner()
+    //         console.log(p2)
+    //         let p3 = await promiseReturner()
+    //         console.log(p3)
+    //     }
+    // )()  // this is iife 
+
+    // -------------- Lecture - 87 (Destructuring) ------------ 
+
+        // let arr = [3, 5, 90, 87, 44, 39]
+        // let [a, b, c, ...rest] = arr 
+        // console.log(a, b, c, rest)
+
+        // let arr2 = [3, 5, 90, 87, 44, 39]
+        // let [a, ,b, ...rest] = arr2
+        // console.log(a, b, rest)
+
+        // let {a, b} = {a: 1, b: 2} 
+        // console.log(a, b)
+
+        // Spread Operator
+
+        // let arr = [1, 2, 3]
+        // let obj = {...arr}
+        // console.log(obj)
+
+        // function sum (a, b, c, d) {
+        //     console.log(a, b, c, d)
+        //     return a + b + c + d ;
+        // }
+        // console.log(sum(...arr))
+
+        // let obj2 = {
+        //     name: "babu", 
+        //     age: 43, 
+        //     time: "2 O clock"
+        // }
+        // console.log({...obj2, name: "Muskan", age: 11})
+        // console.log({name: "Muskan", age: 11, ...obj2}) // this will print obj2 without changing name or age
+
+    // -------------- Lecture - 88 (Scope) ------------ 
+
+    // {
+    //     let a = 2  // block scope
+    //     var b = 11  // global scope
+    // }
+    // console.log(b)
+    // console.log(a) // throw an error
+
+    // function func () {
+    //     let c = "my name is avinash"  // function scope
+    // }
+    // console.log(c)  // throw an error
+
+</script>
+
+</html>

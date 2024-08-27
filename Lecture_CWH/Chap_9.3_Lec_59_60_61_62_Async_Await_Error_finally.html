@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async and Await</title>
+</head>
+
+<body>
+    <h2>In this lecture i will be learning about Async and Await</h2>
+</body>
+
+<script>
+    // Async and Await
+
+    // async function hello() {
+    //     let delhiWhether = new Promise((resolve, reject) => {
+    //         setTimeout(() => {
+    //             resolve("28 deg")
+    //         }, 1000)
+    //     })
+
+    //     let puneWhether = new Promise((resolve, reject) => {
+    //         setTimeout(() => {
+    //             resolve("20 deg")
+    //         }, 5000)
+    //     })
+
+    // delhiWhether.then(alert)
+    // puneWhether.then(alert)
+
+    //     console.log("Fetching Delhi Whether, Please Wait ....")
+
+    //     let delhiW = await delhiWhether
+
+    //     console.log("Delhi Whether is ", delhiW)
+    //     console.log("Fetching Pune Whether, Please Wait ....")
+
+    //     let puneW = await puneWhether
+
+    //     console.log("Pune Whether is ", puneW)
+
+    //     return [delhiW, puneW]
+    // }
+
+    // let Whether = hello()
+
+    // every async function returns a promise so we can use .then() or .catch() with that
+
+    // Whether.then((value) => {
+    //     console.log(typeof value, value)
+    // })
+
+    // ----------- Lecture - 60 (Error Handling using try catch) -----------
+
+    // setTimeout(()=>{
+    //     console.log("Hacking wifi....... Please wait ..........")
+    // }, 1000)
+    // try {
+    //     console.log(rahul)
+    // } catch (error) {
+    //     console.log(error)
+    // }
+    // setTimeout(()=>{
+    //     console.log("Fetching userName and Pasword ............")
+    // }, 2000)
+    // setTimeout(()=>{
+    //     console.log("Hacking Rahul (+9191226433) ............")
+    // }, 3000)
+    // setTimeout(()=>{
+    //     console.log("Rahul has been hacked .............")
+    // }, 4000)
+
+    // try catch will only handle code synchronously so if you put asynchronous (like setTimeout) code inside try catch it will not handle errors but if you put another try catch inside setTimeout then it will also be handled
+
+
+    // ---------- Lecture - 61 (Error object) ------ 
+
+    // try {
+    //     throw new Error("This is a custom error thrown by me!")
+    //     // throw new ReferenceError("This is a custom error thrown by me!")
+    // } catch (error) {
+    //     console.log(error)
+    //     console.log(error.name)
+    //     console.log(error.message)
+    // }
+
+    // Quick Quiz: check whether age is greater than 18 or not throw error if age is < 18 
+
+    // try {
+    //     let age = prompt("Enter your age : ", "18")
+    //     age = (Number)(age)
+    //     if (age < 18 || isNaN(age)) {
+    //         console.log(typeof age, age, " inside if")
+    //         throw new Error("You are underage to surf on this website")
+    //     }
+    //     else {
+    //         console.log(typeof age, age, " inside else")
+    //         console.log("Welcome to my website")
+    //     }
+    // } catch (error) {
+    //     alert(error)
+    // }
+
+    // ---------- Lecture - 62 (finally clause in javaScript) ---------
+
+    function rem(a, b) {
+        try {
+            // throw new Error("I am an error to go into the catch block")
+            return a / b;
+        } catch (error) {
+            console.log(error)
+            return
+        }
+        finally {
+            console.log("I am finally, i run everytime whether there is an error or not!")
+        }
+        console.log("hello, how are you?")
+
+    }
+    console.log(rem(2, 7))
+    
+</script>
+
+</html>

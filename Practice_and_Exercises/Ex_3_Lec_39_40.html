@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tell me Joke</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+    }
+    .joke_container{
+        border-radius: 10px;
+        width: 40%;
+        height: 50%;
+        background: linear-gradient(to bottom left, red, blue, green, yellow);
+        padding: 10px;
+    }
+    .joke_box{
+        border-radius: 10px;
+        background-color: rgb(199, 255, 255);
+        font-size: 1.2rem;
+        font-weight: bold;
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+    }
+</style>
+<body>
+
+    <!-- Lecture - 39 is all about solving Exercise - 2 which i have already solved in Lecture - 30 -->
+
+    <!-- Exercise - 3.  -->
+
+    <!-- elem.innerHTML is used to populate a div with HTML. Search online about the method adn create a website with a div tag containing a random joke given an array of jokes. Use Math. random and fetch jokes from the internet (Use any website to create the array) Your website should show a random joke on every reload. Min length of your jokes array should be  10-->
+
+    <div class="joke_container">
+        <div class="joke_box">
+        </div>
+    </div>
+
+
+</body>
+
+<script>
+    const jokes = [
+    `"Why don’t scientists trust atoms? Because they make up everything. 😜😂😂"`,
+    "Why don’t eggs tell jokes? They’d crack each other up. 😜😂😂",
+    "I don’t trust stairs. They’re always up to something. 😜😂😂",
+    "Did you hear about the Italian chef that died? He pasta way. 😜😂😂",
+    "Why don’t oysters share their pearls? Because they’re shellfish. 😜😂😂",
+    "Helvetica and Times New Roman walk into a bar. “Get out of here!” shouts the bartender. “We don’t serve your type. 😜😂😂”",
+    "Yesterday I saw a guy spill all his Scrabble letters on the road. I asked him, “What’s the word on the street? 😜😂😂”",
+    "Knock! Knock! Who’s there? Control Freak. Con… OK, now you say, “Control Freak who? 😜😂😂”",
+    "Hear about the new restaurant called Karma? There’s no menu: You get what you deserve. 😜😂😂",
+    "A woman in labor suddenly shouted, “Shouldn’t! Wouldn’t! Couldn’t! Didn’t! Can’t!” “Don’t worry,” said the doc. “Those are just contractions. 😜😂😂”",
+    "A bear walks into a bar and says, “Give me a whiskey and … cola.” “Why the big pause?” asks the bartender. The bear shrugged. “I’m not sure; I was born with them. 😜😂😂”",
+    "Did you hear about the actor who fell through the floorboards? He was just going through a stage. 😜😂😂",
+    "Did you hear about the claustrophobic astronaut? He just needed a little space.😜😂😂",
+    "Why did the chicken go to the séance? To get to the other side.😜😂😂",
+];
+
+let randNumber = Math.floor(Math.random() * 14)
+
+let joke_box = document.querySelector(".joke_box")
+joke_box.innerHTML = jokes[randNumber]
+
+</script>
+
+
+</html>

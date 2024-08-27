@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Method Overriding, Constructor Overriding, Static Method and Getters and Setters</title>
+</head>
+<body>
+    <h2>In this lecture i will be learning about Method Overriding, Constructor Overriding, Static Method and Getters and Setters </h2>
+</body>
+
+<script>
+    // ------------------- Lecture - 79 (Method Overriding) ----------------------
+
+    class Employee{
+        constructor(name){
+            console.log("I am a constructor of class employee")
+            this.name = name
+        }
+        login() {
+            console.log(`${this.name} has loggedin`)
+        }
+        logout() {
+            console.log(`${this.name} has loggedout`)
+        }
+        requestLeave(leaves) {
+            console.log(`${this.name} has taken ${leaves} leaves`)
+        }
+    }
+
+    class Programmer extends Employee{
+
+        // constructor(all the arguments) {   // if there is no constructor js make a default constructor and use super() to addres parent cosntructor
+        //     super(all the arguments)          
+        // }
+
+        constructor(name) {
+            console.log("I am a constructor of class Programmer")
+            super(name) // it is necessary to call super constructor before using 'this'
+            this.name = name
+        }
+
+        requestCoffee = (coffee_num) => {
+            console.log(`${this.name} has requested ${coffee_num} coffee`)
+        }
+        requestLeave(leaves) {
+            // console.log(`Programmer cand take  ${leaves + 100} leaves 100 extra`)
+            super.requestLeave(this.leaves)
+        }
+    }
+
+    // let e = new Programmer()
+    // e.login()
+    // e.logout()
+    // e.requestLeave(12)
+
+
+    // ------------------- Lecture - 80 (Constructor Overriding) ----------------------
+
+    // let p = new Programmer("Muskan Gupta")
+    // p.login()
+    // p.logout()
+    // p.requestCoffee(32)
+
+    // ------------------- Lecture - 81 (Static Method) ----------------------
+
+    // class Animal{
+    //     constructor(name) {
+    //         name = Animal.capitalise(name)
+    //         this.name = name;
+    //     }
+        
+    //     walk() {
+    //         console.log(`${this.name} animal is walking.......`)
+    //     }
+
+    //     static capitalise(name) {
+    //         return name.charAt(0).toUpperCase() + name.slice(1)
+    //     }
+    // }
+
+    // let ani = new Animal("tiger")
+    // ani.walk()
+
+    // // console.log(ani.capitalise("ramesh")) // this will throw an error because is captitalise() is a static method and static method is only accessible using the class name not the object of that class
+
+    // console.log(Animal.capitalise("puneet")) // not throw error
+
+
+
+    // ------------------- Lecture - 82 (Getters and Setters and instanceof operator) ----------------------
+
+    class Animal{
+        fly() {
+            console.log(`${this.name} is flying.....`)
+        }
+
+        get name() {
+            return this._name
+        }
+
+        set name(newName) {
+            this._name = newName
+        }
+
+    }
+
+    let ostri = new Animal()
+    ostri.name = "Parrot"
+    ostri.fly()
+
+    // ----------- instanceof Operator --------
+    console.log(ostri instanceof Animal);
+    let c = 3443
+    console.log(c instanceof Animal)   
+    
+    class Rabbit extends Animal{
+        eat() {
+            console.log("I m eating")
+        }
+    }
+
+    let r = new Rabbit()
+    console.log(r instanceof Animal)
+
+
+</script>
+</html>

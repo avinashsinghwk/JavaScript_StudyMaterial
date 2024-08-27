@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PS - 8 Lec 49</title>
+</head>
+<style>
+
+    /* Question - 5 */
+    .bulb{
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        background-color: rgb(94, 94, 94);
+        border: 3px solid black;
+    }
+    .glow{
+        background-color: yellow;
+        border: 3px solid red;
+    }
+    .bulb_btn{
+        padding: 4px;
+        background-color: green;
+        cursor: pointer;
+        color: white;
+        font-weight: bold;
+    }
+    .bulb_btn_bgRed{
+        background-color: red;
+    }
+</style>
+<body>
+    <!-- Question 1. Write a program to show different alerts when differnt buttons are clicked -->
+
+    <!-- <button id="Q_1_btn1">Button 1</button>
+    <button id="Q_1_btn2">Button 2</button>
+    <button id="Q_1_btn3" onclick="alert(`you have Clicked button 3`)">Button 3</button>
+    <button id="Q_1_btn4">Button 4</button> -->
+
+    <!-- Question 2. Create a website which is capable of storing bookmarks of your favourite website using href -->
+
+    <!-- <a href="https://google.com"><button>Google</button></a>
+    <a href="https://twitter.com"><button>Twitter</button></a>
+    <a href="https://facebook.com"><button>Facebook</button></a> -->
+
+    <!-- Question 3. Repeat Q - 2 using event listener -->
+    <!-- <button id="Q_3_btn1">Google</button>
+    <button id="Q_3_btn2">Facebook</button>
+    <button id="Q_3_btn3" onclick="getme()">Twitter</button> -->
+
+    <!-- Question 4. Write a js program to keep fetching content of a website (every 5 second) -->
+
+    <!-- Question 5. Create a glowing bulb effect using classList toggle method in js -->
+
+    <!-- <div id="Q_5">
+        <div class="bulb"></div>
+        <button id="bulb_btn" class="bulb_btn">On</button>
+    </div> -->
+
+</body>
+
+<script>
+    // Question - 1
+
+    // let Q_1_btn1 = document.getElementById("Q_1_btn1")
+    // let Q_1_btn2 = document.getElementById("Q_1_btn2")
+    // let Q_1_btn3 = document.getElementById("Q_1_btn3")
+    // let Q_1_btn4 = document.getElementById("Q_1_btn4")
+
+    // Q_1_btn1.onclick = () =>{
+    //     alert("You have Clicked button 1")
+    // }
+
+    // Q_1_btn2.addEventListener("click", ()=>{
+    //     alert("You have Clicked button 2")
+    // })
+
+    // Q_1_btn4.setAttribute("onclick","clicker()")
+    // clicker = ()=>{
+    //     alert("You have Clicked button 4")
+    // }
+
+    // Question - 3
+
+    // Q_3_btn1 = document.getElementById("Q_3_btn1")
+    // Q_3_btn2 = document.getElementById("Q_3_btn2")
+    // Q_3_btn3 = document.getElementById("Q_3_btn3")
+
+    // Q_3_btn1.onclick = ()=>{
+    //     location.href = "https://google.com"
+    // }
+    // Q_3_btn2.addEventListener("click", ()=>{
+    //     location.href = "https://facebook.com"
+    // })
+    // getme = () => {
+    //     location.href = "https://twitter.com"
+    // }
+
+
+    // Question - 4
+
+    // const fetchContent = async (url) => {
+    //     con = await fetch(url)
+    //     let a = await con.json()
+    //     return a;
+    // }
+    // setInterval(async ()=>{
+    //     let url = "https://jsonplaceholder.typicode.com/todos/1"
+    //     console.log(await fetchContent(url))
+    // }, 5000)
+
+    // Question - 5
+
+    // let bulb_btn = document.getElementById("bulb_btn")
+    // let bulb = document.querySelector(".bulb")
+
+    // bulb_btn.addEventListener("click", ()=>{
+    //     if(bulb_btn.innerHTML == "On"){
+    //         bulb_btn.innerHTML = "Off"
+    //     }
+    //     else{
+    //         bulb_btn.innerHTML = "On"
+    //     }
+    //     bulb.classList.toggle("glow")
+    //     bulb_btn.classList.toggle("bulb_btn_bgRed")
+    // })
+
+
+</script>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HackerMan</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    body {
+        padding: 20px;
+        background-color: rgb(16 16 16);
+        color: rgb(4, 253, 4);
+        font-size: 16px;
+        font-weight: bold;
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
+    body::before{
+        content: "";
+        position: absolute;
+        width: calc(100% - 40px);
+        height: 100%;
+        top: 0;
+        background: url(Img/hacker_photo.png) no-repeat center;
+        background-size: 700px;
+        z-index: -1;
+
+    }
+    .write{
+        margin-left: 20px;
+    }
+</style>
+
+<body>
+    <!-- Lecture - 64 is all about solving Ex - 4 which i have already solved in Lecture - 51 -->
+
+    <!-- Write a js program to pretend to look like a hacker. Write an async function which will simply display the following output: 
+    Initialiging hack program ....... 
+    Hacking Ashish's username........
+    Username found ashish17.......
+    Connecting to facebook ........
+    Try to use Html and styling if possible
+    -->
+    <div class="write"></div>
+
+
+
+</body>
+ <script>
+    let write = document.querySelector(".write")
+
+    let p1 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Hacking Started............")
+        }, 3000)
+    })
+    let p2 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Hacking Ashish's username..............................")
+        }, 7000)
+    })
+    let p3 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Username found ashish17.............................")
+        }, 10000)
+    })
+    let p4 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            reject(new Error("Link : https://ahjruewarujuar.cuferfhkj%2"))
+        }, 11000)
+    })
+    let p5 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("Connecting to facebook ......................................")
+        }, 15000)
+    })
+
+
+    async function hacker() {
+        write.innerHTML = "Analizing the codes.............................<br>"
+
+        let a = 1;
+        let one = setInterval(() => {
+            write.innerHTML = write.innerHTML + "<br>" + "Data is getting stored..............."
+            a++;
+            if(a == 3){clearInterval(one)}
+        }, 500)
+
+        let valP1 = await p1
+        write.innerHTML = write.innerHTML + "<br><br>" + valP1
+        write.innerHTML = write.innerHTML + "<br>getting data............................<br>Analizing the codes.........................<br>Data Found.............................<br>Data is ready to be hacked<br>"
+
+         a = 1;
+        let two = setInterval(() => {
+            write.innerHTML = write.innerHTML + "<br>" + "Accessing Data..............."
+            a++;
+            if(a == 3){clearInterval(two)}
+        }, 500)
+
+
+        let valP2 = await p2
+        write.innerHTML = write.innerHTML + "<br><br>" + valP2 + "<br>Analizing the codes.................................<br>"
+
+        a = 1;
+        let three = setInterval(() => {
+            write.innerHTML = write.innerHTML + "<br>" + "Encryping data as this link : https:avinashsinghwk@gmail.com......"
+            a++;
+            if(a == 4){clearInterval(three)}
+        }, 500)
+
+        let valP3 = await p3
+        write.innerHTML = write.innerHTML + "<br><br>" + valP3 + "<br>Analizing the codes............................<br>"
+
+        try {
+            let valP4 = await p4
+        } catch (err) {
+            write.innerHTML = write.innerHTML + "<br>" + err + "<br>"
+        }
+
+        a = 1;
+        let four = setInterval(() => {
+            write.innerHTML = write.innerHTML + "<br>" + "Generating password *********************"
+            a++;
+            if(a == 5){clearInterval(four)}
+        }, 500)
+
+        let valP5 = await p5
+        write.innerHTML = write.innerHTML + "<br><br>" + valP5
+        write.innerHTML = write.innerHTML + "<br>Hacking complete.................<br>You got all the data in your pc....................<br>Want to delete it...............................<br>"
+    }
+    hacker()
+</script>
+
+</html>

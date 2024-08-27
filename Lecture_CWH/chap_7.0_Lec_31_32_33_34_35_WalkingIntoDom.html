@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walking into Dom</title>
+</head>
+<style>
+    table{
+        width: 50vw;
+        margin: 0 auto;
+    }
+    th{
+        font-size: 2rem;
+        font-weight: bold;
+        width: 200px;
+        text-align: start;
+        background-color: red;
+        color: white;
+        border: 1px solid black;
+    }
+    td{
+        text-align: start;
+        width: 200px;
+        font-size: 1.5rem;
+        background-color: blue;
+        color: white;
+        border: 1px solid black;
+    }
+    
+</style>
+<body>
+    <!-- This is for Lecture - 31, 32, 33, 34 -->
+
+    <!-- <div>
+        <p class="greet">How are you? Avinash!</p>
+        <span>I am fine. Thank You!</span>
+    </div> -->
+
+    <!-- This is for Lecture - 35 -->
+
+    <table>
+        <caption>No. of matches played </caption>
+        <thead>
+            <tr>
+                <th>Player</th>
+                <th>Matches</th>
+                <th>Score</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Virat</td>
+                <td>11</td>
+                <td>821</td>
+            </tr>
+            <tr>
+                <td>Dhoni</td>
+                <td>21</td>
+                <td>8221</td>
+            </tr>
+            <tr>
+                <td>Rohit</td>
+                <td>31</td>
+                <td>271</td>
+            </tr>
+            <tr>
+                <td>Bumra</td>
+                <td>1</td>
+                <td>81</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        console.log("In this lecture i will be learning about dom manupulation");
+
+        // Lecture - 31 is all about some info on basics of Html
+
+        // -------- ----- From Here Lecture - 32 starts -------------
+        // Children Nodes
+
+        // console.log(document.body.firstChild)
+        // console.log(document.body.lastChild)
+        // console.log(document.body.childNodes)
+
+        // console.log(document.body.childNodes[0])    // equal to body.firstChild
+        // console.log(document.body.childNodes[document.body.childNodes.length - 1])   // equal to body.lastchild
+
+        // let arr = Array.from(document.body.childNodes)
+        // console.log(arr)
+
+        // -------- ----- From Here Lecture - 33 starts -------------
+        //  Parent & Sibling of an Element
+
+
+        // -------- ----- From Here Lecture - 34 starts -------------
+        //  Element Only Navigation
+
+        let body = document.body;
+        // console.log(body.firstChild)
+        // console.log(body.firstElementChild)
+        // console.log(body.lastElementChild)
+        // console.log(body.nextElementSibling)
+        // console.log(body.previousElementSibling)
+        // console.log(body.parentElement)
+        // console.log(body.children)
+
+        // const backgroundRed = () =>{
+        //     body.firstElementChild.style.background = "red"
+        // }
+        // backgroundRed();
+
+        // --------  Lecture - 35 (Table based Navigation) -------
+
+        // let t = document.body.firstElementChild
+        // console.log(t)
+        // console.log(t.caption)
+        // console.log(t.rows)
+        // console.log(t.tHead.firstElementChild)
+        // console.log(t.tFoot)
+        // console.log(t.tBodies)
+        // console.log(t.rows[0].cells)
+        // console.log(t.rows[0].sectionRowIndex)
+        // console.log(t.rows[0].rowIndex)
+        // console.log(t.rows[0].firstElementChild.cellIndex)
+
+
+        
+
+
+        
+
+
+
+    </script>
+</body>
+</html>

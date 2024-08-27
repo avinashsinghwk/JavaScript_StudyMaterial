@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PS - 7 </title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* Question 1 */
+    nav{
+        height: 40px;
+        width: 100%;
+        background-color: black;
+        display: flex;
+        column-gap: 2rem;
+        color: white;
+        font-size: 1.2rem;
+        font-weight: bold;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Question 3 */
+
+    .element{
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    /* Question 4 */
+
+    li{
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin: 5px 0 ;
+    }
+    
+</style>
+<body>
+    <!-- Question 1. Create a navbar and change the color of it's first element to red -->
+    <nav>
+        <div class="home">Home</div>
+        <div class="contact">Contact</div>
+        <div class="visit">Visit</div>
+    </nav>
+
+    <!-- Question 2. Create a table without tbody. Now use view page source button to check whether it has tbody or not  -->
+
+    <table>
+        <thead>
+            <tr>
+                <th>Player</th>
+                <th>Matches</th>
+                <th>Result</th>
+            </tr>
+        </thead>
+        <tr>
+            <td>Virat</td>
+            <td>32</td>
+            <td>Win</td>
+        </tr>
+    </table>
+
+    <!-- No, tbody is automatically inserted by the browser when we try to see our code in view page source then it shows only our code so tbody will not be shown in the view page source but in inspect element is is shown-->
+
+    <!-- Questio9n 3. Create a element with three children. Now change the color of first and last element to green -->
+    <div class="element">
+        <div class="child1">I am child 1</div>
+        <div class="child2">I am child 2</div>
+        <div class="child3">I am child 3</div>
+    </div>
+
+    <!-- Question 4. Write a js code to change all the <li> background to cyan -->
+        <div class="Q_4">
+            <ul>
+                <li>This is line 1</li>
+                <li>This is line 2</li>
+                <li>This is line 3</li>
+                <li>This is line 4</li>
+            </ul>
+        </div>
+
+    <!-- Question 5. Which of the following is used to look for the farthest ansestor that matches a given css selector  a> matches b> closet c> contains -->
+
+    <!-- closet is used to look the closest ansestor so none of the following will be correct -->
+
+
+</body>
+
+<script>
+    // Question 1. 
+
+    document.body.firstElementChild.firstElementChild.style.color = "red"
+
+    // Question 3. 
+
+    let childGreen = document.querySelector(".element")
+    childGreen.firstElementChild.style.color = "green"
+    childGreen.lastElementChild.style.color = "green"
+
+    // Question 4.
+    let backgroundCyan = document.getElementsByTagName("li")
+    backgroundCyan = Array.from(backgroundCyan)
+    for(key in backgroundCyan){
+        backgroundCyan[key].style.backgroundColor = "cyan"
+    }
+
+
+
+</script>
+</html>

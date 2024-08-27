@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarm Clock</title>
+</head>
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #box{
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background-color: black;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        font-weight: bold;
+    }
+</style>
+<body>
+    <!-- Lecture - 93 is all about solving Exercise - 7 which i have already solved in Lecture - 85 -->
+
+    <!-- The HTML AudioElement interface can be used to play audio in the browser. Create an alarm clock which displays time and plays sound at a user specified time -->
+
+    <div id="box">00</div>
+
+</body>
+<script>
+    // Lecture - 93 is all about solving Exercise - 7 which i have already solved in Lecture - 85
+
+    let time = prompt("Enter a time for stopwatch in second")
+    time = (Number)(time)
+
+    document.getElementById("box").innerHTML = time
+    let a = setInterval(() => {
+        time-=1;
+        document.getElementById("box").innerHTML = time
+        if(time == 0){
+            clearInterval(a)
+            let audio = new Audio("Img/alarm.mp3")
+            audio.play()
+        }
+    }, 1000)
+
+    addEventListener("DOMContentLoaded", () => document.body.click())
+    addEventListener("DOMContentLoaded", () => document.body.click())
+    document.body.onclick = () => {
+        document.body.style.backgroundColor = "red"
+    }
+
+
+
+
+    
+
+</script>
+
+</html>

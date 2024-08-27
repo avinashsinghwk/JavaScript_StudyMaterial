@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoisting Closure and Arrow Function</title>
+</head>
+
+<body>
+    <h2>In this lecture i will be learning about Hoisting, Closure and Arrow Function</h2>
+</body>
+<script>
+    // ---------- Lecture - 89 (Hoisting) -----------
+
+    // Whenever javaScript runs, it executes in two phases first memory allocation phase and second execution phase. In memory allocation phase first all the function along with the bodies is declated in the global execution context and then all the variable is declared without it's values just declaration. If variable is declared using 'var' then it is declared and given it's default value 'undefined' when execution happens it happens top to bottom, so when it reaches the line the variable is assigned the value. So, if you want to access the variable before initialization line it will give the value 'undefined'. let and const is hoisted same they are send in temporal dead zone so if you want to access variable before initialization line that will throw error. Expression functions (arrow function , let a = function()) will behave like a variable which is just get hoisted without bodies.
+
+    // greet()
+    // function greet(){
+    //     console.log("Good Morning!")
+    // }
+
+    // // greet2()
+    // // var greet2 = () => {console.log("Good Evening!")}  // function or class expression is not hoisted
+
+    // // greet3()
+    // // var greet3 = function (){console.log("Good Night!")}  // function or class expression is not hoisted
+
+    // console.log(a)
+    // var a = 9;  // Declaration is hoisted to the top but initialization is not
+    // console.log(a)
+
+    // console.log(b)
+    // let b = 9;  // Declaration is hoisted to the top but initialization is not (if use let or const then it go te the dead zone)
+    // console.log(b)
+
+    // ---------- Lecture - 90 (Closure) -----------
+
+    // function along with it's lexical environment makes closure, whenever we return a function it return a closure i.e function with it's lexical scope
+
+    // function init() {
+    //     let name = 'avi'
+    //     function displayName() {
+    //         console.log(name)
+    //     }
+    //     name = 'babu'
+    //     return displayName
+    // }
+    // let dis = init()
+    // dis()
+
+    // function returnFun() {
+    //     let x = () => {
+    //         let a = 1
+    //         console.log(a)
+    //         let y = () => {
+    //             // let a = 2
+    //             console.log(a)
+    //             let z = () => {
+    //                 // let a = 3
+    //                 console.log(a)
+    //             }
+    //             z()
+    //         }
+    //         a = 9999
+    //         y()
+    //     }
+    //     return x
+    // }
+    // let val = returnFun()
+    // val()
+
+    // ---------- Lecture - 91 (Arrow Function) ----------
+
+    // if you have to use only one parameter then no need to put it inside () but if no. of parameter is greater than 1 have to put these parameters inside () also no need to use write code inside {} if only have one line of code
+
+    // const sayHelo = name => console.log("hello " + name)
+    // sayHelo("avinash")
+
+
+    // const sayHelo2 = (name, greeting) => console.log(greeting + " " + name)
+    // sayHelo2("avinash", "good Mori")
+
+    // let x = {
+    //     name : "Avi",
+    //     exp : 12,
+    //     role : "Web Developer",
+    //     show : function(){
+    //         console.log(this)  // in function in object this is that object
+    //         let that = this
+    //         setTimeout(function(){
+    //             console.log(this) // in function in function in object this is the window object
+    //              console.log(`The name is ${that.name} experience is ${that.exp} and role is ${that.role}`)
+    //          }, 2000)
+    //     }
+    // }
+    // x.show()
+
+    // so use arrow function because it take it's this from the lexical
+    
+
+</script>
+
+</html>

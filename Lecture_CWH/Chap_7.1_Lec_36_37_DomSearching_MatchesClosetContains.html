@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Searching and Matches, Closet and Contains</title>
+</head>
+<style>
+    .card{
+        width: 300px;
+        height: 320px;
+        display: flex;
+        flex-direction: column;
+        border-radius: 8px;
+        border: 1px solid black;
+        box-shadow: 0 0 8px black;
+    }
+    .img{
+        color: black;
+        background-color: rgba(109, 109, 109, 0.705);
+        width: 100%;
+        height: 70px;
+        font-size: 1.5rem;
+    }
+    h2{
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+    p{
+        font-size: 1rem;
+    }
+</style>
+<body>
+
+    <!-- This is for lecture - 36 -->
+
+    <div class="card" id="card">
+        <div class="img">Image</div>
+        <h2 class="title">My title</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt eligendi numquam quaerat maxime odio facere illum molestiae dolores minus, voluptatem, sequi temporibus repellendus?</p>
+        <input type="text" name="text" placeholder="Enter your name">
+    </div>
+
+    <!-- This is for lecture - 37 -->
+
+    <div id="id1" class="box">This  is id1 <span id="span1">I am span 1</span></div>
+    <div id="id2" class="box">This  is id2</div>
+</body>
+    <script>
+
+        console.log("In this lecture i will be learning about DOM Searching and Matches Closet and Contains")
+
+        // --------- Lecture 36 (DOM Searching) ---------
+
+        // let card = document.getElementById("card")
+        // card.style.backgroundColor = "red"
+
+        // let cardTitle = document.getElementsByClassName("title")[0]
+        // cardTitle.style.color = "red"
+
+        // let para = document.querySelector("p")
+        // para.style.color = "green"
+
+        // let card = document.querySelector("#card")
+        // card.style.background = "pink"
+
+        let cardTitle = document.querySelector(".title")
+        cardTitle.style.textAlign = "center"
+
+        // let para = document.getElementsByTagName("p")[0]
+        // para.style.color = "yellow"
+
+        let name = document.getElementsByName("text")[0]
+        name.style.width = "50%"
+
+        // ----- Lecture - 37 (Matches, Closet and Contains) -------- 
+
+        let id1 = document.getElementById("id1")
+        console.log(id1)
+        console.log(id1.matches(".box"))
+        console.log(id1.matches(".text"))
+
+        let span1 = document.getElementById("span1")
+        console.log(span1.closest("#id1"))
+
+        console.log(id1.contains(span1))
+        console.log(span1.contains(id1))
+
+
+
+    </script>
+</html>

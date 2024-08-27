@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oops, Prototype and Classes and Objects Lecture - 74 75 76</title>
+</head>
+<body>
+    <h2>In this lecture i will be learning about Object Oriented Programming and Prototype __proto__ and Classes and Objects and Constructor and Inheritance</h2>
+
+
+</body>
+<script>
+    // --------------- Lecture - 74 (Object Oriented Programming) ---------------------
+
+    // This lecture is all about theory on Oops
+    // Four pilars of Oops Abstraction, Encapsulation, Inheritance and Polymorphism
+
+    // --------------- Lecture - 75 (Prototype __proto__) ------------------------
+
+    // let obj = {
+    //     name: "Avinash Kumar Singh",
+    //     email: "abhinashsinghwk@gmail.com", 
+    // }
+
+    // console.log(obj)
+    // obj.run()  // this will throw an error because there is no run() inside obj
+
+    // setting prototype
+    
+    // let p = {
+    //     run: () => {
+    //         alert("I am a run function")
+    //     },
+    //     babu: "avinash",
+    // }
+
+    // obj.__proto__ = p
+
+    // console.log(obj)
+    // // obj.run() // this will not throw error because run() is present in the prototype of obj
+    // // console.log(obj.babu)
+    // // console.log(obj.__proto__.run())
+    // // console.log(obj.__proto__.babu)
+
+    // p.__proto__ = {
+    //     num: "91226"
+    // }
+
+    // // console.log(p.num) // first it will check num in p if it doesn't find it then it check it's prototype then it's prototype .....
+    // console.log(obj.__proto__.__proto__.num)
+
+    // -------------------- Lecture - 76 (Classes and Objects) ------------------
+
+        // class RailwayForm{
+        //     submit = () =>{
+        //         let name = prompt("Enter your name")
+        //         console.log(`Your name is ${name}`)
+        //     }
+        //     cancel = () => {
+        //         if(confirm("Do you want to cancel your ticke?")){
+        //             alert(this.name + ", your ticket for Train: " + this.trainNo + " has been cancled")
+        //         }
+        //     }
+        //     fill = (givenName, trainNo) => {
+        //         this.name = givenName
+        //         this.trainNo = trainNo
+        //     }
+        // }
+
+        // let avinash = new RailwayForm()
+        // avinash.submit()
+        // avinash.cancel()
+
+        // let muskan = new RailwayForm()
+        // // muskan.submit()
+        // muskan.fill("Muakan Gupta", 12345)
+        // muskan.cancel()
+
+        // ------------- Lecture - 77 (Constructor) -------------------
+
+        // class Phone{
+        //     constructor(person, num) {
+        //         console.log("Constructor calling..........")
+        //          this.person = person;
+        //          this.number = num;
+        //     }
+        //     ring() {
+        //         console.log(`i am ringing ............ on num ${this.number}`);
+        //     }
+        //     call() {
+        //         console.log(`i am calling ${this.person}`);
+        //     }
+        // }
+
+        // let myPhone = new Phone("Muskan", "62078")
+        // myPhone.ring()
+        // myPhone.call()
+
+        // Constructor is invoked automatically when object is created with that class and Constructor overloading is not possible in JavaScript
+
+        // --------------- Lecture 78 (Inheritance) ---------------
+
+        // class SmartPhone extends Phone{
+        //     camera() {
+        //         console.log("I am clicking ............ on mobile whose imei number is ")
+        //     }
+        //     internet() {
+        //         console.log("I am surfing internet ............ on mobile whose imei number is ")
+        //     }
+        // }
+
+        // let mySmartPhone = new SmartPhone()
+        // mySmartPhone.call()
+        // mySmartPhone.ring()
+        // mySmartPhone.camera()
+        // mySmartPhone.internet()
+        
+
+
+</script>
+</html>

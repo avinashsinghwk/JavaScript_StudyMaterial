@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise API</title>
+</head>
+<body>
+    <h2>In this lecture i will be learning about attaching multiple Handlers to a promise and Promise API</h2>
+
+</body>
+<script>
+    // lecture - 57 (Attaching multiple Handlers to a promise)
+
+    // let p1 = new Promise((resolve, reject) => {
+    //     alert("Hey i am not yet resolved")
+    //     setTimeout(()=> {
+    //         resolve(1)
+    //     }, 2000)
+    // })
+
+    
+    // p1.then(()=> {
+    //     console.log("Yehhhhhhh! Hurrahhhhhhhhh!")
+    // })
+
+    // p1.then((value)=> {
+    //     console.log("Promise is resolved with value = ", value)
+    // }, (error)=> {
+    //     console.log(error)
+    // })
+
+
+    // Lecture - 58 (Promise API)
+
+    let p1 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("value 1")
+        }, 1000);
+    })
+
+    let p2 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            // resolve("value 2")
+            reject(new Error("I got some error"))
+        }, 2000);
+    })
+
+    let p3 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("value 3")
+        }, 3000);
+    })
+
+    // p1.then((value)=> {
+    //     console.log(value)
+    // })
+    // p2.then((value)=> {
+    //     console.log(value)
+    // })
+    // p3.then((value)=> {
+    //     console.log(value)
+    // })
+
+    // Promise.all([array of promises]) -> will give array of resolved value when all the promises will be resolved and throw error if any of the promises will be rejected
+
+    // let promise_all = Promise.all([p1, p2, p3])
+    // promise_all
+    // .then((result) => {
+    //     console.log(result)
+    // })
+    // .catch((error) => {
+    //     console.log(error)
+    // })
+
+    // Promise.allSettled([array of promises]) -> will give array of objects of all the promises with items status or value/reason whether all promises is resolve or reject 
+
+    // Promise.allSettled([p1, p2, p3]).then((result) => {
+    //     console.log(result)
+    // })
+
+    // Promise.race([array of promises]) -> will give the resolved value or the rejected error of a promise which is settled first
+
+    // Promise.race([p3, p2, p1])
+    // .then((value) => {
+    //     console.log(value)
+    // })
+    // .catch((error) => {
+    //     console.log(error)
+    // })
+
+    // Promise.any([array of promises]) -> will give the resolved value of a promise which is fullfilled first and throws AggregateError if all the promises are rejected
+
+    // Promise.any([p1, p2, p3])
+    // .then((value) => {
+    //     console.log(value)
+    // })
+
+    // Promise.resolve(resolved value) -> will give the resolved value if promise is resolved 
+
+    // let prom = Promise.resolve("Yes resolved")
+    // prom.then((value) => console.log(value))
+
+    // Promise.reject(error) -> will throw error when the promise is rejected
+
+    // let promi = Promise.reject(new Error("I got some error"))
+    // promi.catch((error) => console.log(error))
+
+
+</script>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pr - 6 Ex - 2</title>
+</head>
+<body>
+    <script>
+        console.log("In this lecture i will be solving practice problem 6 and Exercise 2")
+        // document.body.style.backgroundColor = "skyblue"
+
+        // Question 1. Write a program using prompt function to take input of age as value from the user and use alert to tell him if he can drive or not
+
+        // function Q_1(){
+        // let age = prompt("Enter your age ", 18)
+        // age = Number.parseInt(age)
+        // alert("You can" + ((age >= 18) ? " drive!" : " not drive!"))
+        // }
+
+        // Q_1();
+    
+        // Question 2. In Q - 1 use confirm to ask the user if he wants to see the prompt again
+        // let ask = confirm("Do you want to again see that ")
+        // if(ask){
+        //     Q_1()
+        // }
+        // else{
+        //     document.write("Thank You")
+        // }
+
+        // Question 3. In the previous question use console.error to log the error if the age entered is negative
+
+        // let age = prompt("Enter your age ", 18)
+        // age = Number.parseInt(age)
+        // if(age < 0){console.error("Age can not be negative")}
+        // else{
+        //     alert("You can" + ((age >= 18) ? " drive!" : " not drive!"))
+        // }
+
+        // Question 4. Write a program to change the url to google.com (Redirection)  if user enters a number greater than 4
+        
+        // let num = prompt("Enter a number ")
+        // num = Number.parseInt(num)
+        // if(num > 4){
+        //     window.location.href = "https://google.com"
+        // }
+
+        // Question 5. Change the background of the page yellow red or any other color based on user input through prompt
+
+        // let color = prompt("Enter a color name ")
+        // document.body.style.backgroundColor = color;
+
+        // Exercise 2. Use JavaScript to create a game of Snake Water Gun. The  game should ask you to enter S, W or G. The computer should be able to randomly generate 5, @ or G and declare win or loss using alert. Use confirm and prompt whenever required. 
+
+        let comChoice = (Math.ceil(Math.random()*3))
+        let userChoice
+        do{
+         userChoice = prompt("Enter W for Water, S for Snake and G for Gun", "s")
+        if(userChoice == "s" || userChoice == "S"){
+            userChoice = 1
+            break
+        }
+        else if(userChoice == "w" || userChoice == "W"){
+            userChoice = 2
+            break
+        }
+        else if(userChoice == "g" || userChoice == "G"){
+            userChoice = 3
+            break
+        }
+    }while(true)
+    if(comChoice == userChoice){
+        alert("Match Draw")
+        document.write("\nYou both chose same")
+    }
+    else if((comChoice == 1 && userChoice == 2) || (comChoice == 2 && userChoice == 3) || (comChoice == 3 && userChoice == 1))
+    {
+        alert("You Lose!")
+        document.write("\nSorry, Bhai you loose the game")
+    }
+    else{
+        alert("You Win!")
+        document.write("\nWelldone Bhai! for winning the game")
+    }
+
+
+    </script>
+
+</body>
+</html>

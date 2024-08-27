@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Set - 9, Lecture - 63</title>
+</head>
+
+<body>
+    <h2>In this lecture i will be solving Practice Problem - 9 which is in Lecture - 63</h2>
+</body>
+<script>
+    // Question 1. Write a program to load a javaScript in a borwser using Promises. Use .then() to display an alert when the load is complete
+
+    // let loadScript = (url) => {
+    //     let p = new Promise((resolve, reject) => {
+    //         let script = document.createElement("script")
+    //         script.setAttribute("src", url)
+    //         document.head.append(script)
+    //         script.onload = () => {
+    //             resolve("Resolving value = 1")
+    //         }
+    //         script.onerror = () => {
+    //             reject(new Error("We got some error in loading script"))
+    //         }
+    //     })
+    //     p.then((value) => {
+    //         alert(`Script is loaded with ${value}`)
+    //     }, (error) => {
+    //         alert(error)
+    //     })
+    // }
+    // loadScript("PS_4_Lec_15.js")
+
+    // Question 2. Write the same program from previous question and use async/await syntax
+
+    // let loadScript = async (url) => {
+    //     let script = document.createElement("script")
+    //     script.src = url
+    //     document.head.append(script)
+    //     return url;
+    // }
+
+    // let loadScriptCaller = async () => {
+    //     let url = await loadScript("PS_4_Lec_15.js")
+    //         console.log("Script is loaded with url = ", url)
+    // }
+
+    // loadScriptCaller()
+
+    // Question 3. Create a promise which rejects after 3 seconds. Use an async/await to get its value. Use a try catch to handle its error
+
+    // let p = new Promise((resolve, reject) => {
+    //     setTimeout(() => reject(new Error("i have been rejected after 3 seconds")), 3000)
+    // })
+    // async function valueGetter() {
+    //     try {
+    //         let value = await p
+    //     } catch (error) {
+    //         console.log("Some Error have occured \n", error)
+    //     }
+    // }
+    // valueGetter()
+
+    // Question 4. Write a program using Promise.all() inside an async/await to await 3 promises. Compare its results with the case where we await these promises one by one.
+
+    // let p1 = new Promise((resolve, reject) => {
+    //     setTimeout(() => {
+    //         resolve(10)
+    //     }, 2000)
+    // })
+    // let p2 = new Promise((resolve, reject) => {
+    //     setTimeout(() => {
+    //         resolve(100)
+    //     }, 4000)
+    // })
+    // let p3 = new Promise((resolve, reject) => {
+    //     setTimeout(() => {
+    //         resolve(1000)
+    //     }, 6000)
+    // })
+
+    // const run = async () => {
+    //     console.time("time1")
+
+    //     let p1_prom = await p1
+    //     let p2_prom = await p2
+    //     let p3_prom = await p3
+    //     console.log(p1_prom, "  ", p2_prom, "  ", p3_prom)
+
+    //     console.timeEnd("time1")
+    // }
+
+    // const run2 = async () => {
+    //     console.time("time2")
+    //     let a1 = p1
+    //     let a2 = p2
+    //     let a3 = p3
+    //     let prom = await Promise.all([a1, a2, a3])
+    //     console.log(prom)
+    //     console.timeEnd("time2")
+
+    // }
+
+    // run()
+    // run2()
+
+</script>
+
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events and Other DOM Properties</title>
+</head>
+<style>
+    /* This is for Lecture - 45 */
+    .yellow{
+        background-color: yellow;
+        color: black;
+    }
+    .red{
+        background-color: red;
+        color: black;
+    }
+    .font_size{
+        font-size: 2rem;
+    }
+</style>
+<body>
+    <!-- Lecture - 41 (Outer or Inner Html) -->
+
+    <span hidden>Hey, I am span </span>
+
+    <!-- Lecutre - 42 (Attribute Methods) -->
+
+    <!-- <div class="box" id="baksa" data-game="mario" data-player="avinash">I have been changed by innerHTML</div> -->
+    <!-- data-player and data-game are custom attribute -->
+
+    <!-- Lecture - 43 (Insertion inside Dom) -->
+
+    <!-- <div class="container">
+        I am the starting
+        <div id="first">Hello, I have been made for Lecute - 43</div>
+        I am the ending
+    </div> -->
+
+    <!-- Lectue - 44 (insert Adjacent HTML/text/Element) -->
+
+    <!-- <div id="first">Hey I am first</div> -->
+
+    <!-- Lectue - 45 (classList and className)  -->
+
+    <!-- <div id="first">
+        <span>I am good</span>
+    </div> -->
+
+</body>
+<script>
+    // Lecture - 41
+
+    // console.log(document.getElementsByTagName("span")[0])  // This will print element 
+    // console.dir(document.getElementsByTagName("span")[0])  // This will print element as an object
+
+    // console.log(document.body.firstChild.nodeName)  // used to read tagName of any node
+    // console.log(document.body.firstElementChild.nodeName)
+
+    // console.log(document.body.firstElementChild.tagName)  // used to read tagName of only Element node
+    // console.log(document.body.childNodes[1].tagName)  
+
+    // let span = document.getElementsByTagName("span")[0];
+    // console.log(span.innerHTML)
+    // span.innerHTML = "<b>I have been changed by innerHTML</b>"
+
+    // console.log(span.outerHTML)
+    // span.outerHTML = "<i>I have been changed by outerHTML</i>"
+    // console.log(span)
+    // console.log(span.outerHTML)
+
+    // console.log(document.body.textContent)  // it will tell all the text content 
+    // console.log(document.body.childNodes[1].data)
+
+    // document.getElementsByTagName("span")[0].hidden = false
+
+    // Lecture - 42 (Attribute Methods)
+
+    // console.log(document.getElementById("baksa").getAttribute("class"))
+    // console.log(document.getElementById("baksa").hasAttribute("style"))
+    // document.body.setAttribute("class","b_ody")
+    // document.body.removeAttribute("class")
+    // console.log(document.getElementById("baksa").attributes)
+
+    // We can out custom attribute like data-player and data-game 
+    
+    // console.log(document.getElementById("baksa").dataset)
+    // console.log(document.getElementById("baksa").dataset.player)
+    // console.log(document.getElementById("baksa").dataset.game)
+
+    // Lecture - 43 (Insertion inside Dom)
+
+    // let container = document.getElementsByClassName("container")[0]
+    // container.firstElementChild.innerHTML = container.firstElementChild.innerHTML + "<h2>How are You?</h2>"
+
+    // let div = document.createElement("div")
+    // div.innerHTML = "<h1>Hii, i am a new div created by js </h1>"
+
+    // container.appendChild(div)
+    // container.append(div)
+    // container.prepend(div)
+    // container.firstElementChild.after(div)
+    // container.firstElementChild.before(div)
+    // container.firstElementChild.replaceWith(div)
+
+    // <!-- Lectue - 44 (insert Adjacent HTML/text/Element) -->
+ 
+    // let first = document.getElementById("first")
+
+    // first.insertAdjacentHTML("beforeend",`<div class="text">brforeend</div>`)
+    // first.insertAdjacentHTML("afterbegin",`<div class="text">afterbegin</div>`)
+    // first.insertAdjacentHTML("beforebegin",`<div class="text">beforebegin</div>`)
+    // first.insertAdjacentHTML("afterend",`<div class="text">afterend</div>`)
+
+    // first.remove()
+
+    // first.insertAdjacentText("afterbegin", "I am just a text written by insertAdjacentText")
+
+    // let div = document.createElement("div")
+
+    // first.insertAdjacentElement("beforebegin",div)
+
+    // Lecture - 45 (classList and className)
+
+    // let first = document.getElementById("first")
+    // let span = document.getElementsByTagName("span")[0]
+
+    // first.setAttribute("class","red")
+
+    // first.className = "yellow font_size"
+
+    // first.classList.remove("font_size" )
+
+    // first.classList.add("font_size" )
+
+    // first.classList.toggle("font_size" )
+
+    // console.log(first.classList.contains("font_size" ))
+
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+</script>
+</html>
